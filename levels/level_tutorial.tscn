@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xas5ogq42mw5"]
+
+[ext_resource type="PackedScene" uid="uid://cyeoxxik52d3s" path="res://levels/level.tscn" id="1_onn8r"]
+[ext_resource type="PackedScene" uid="uid://driml88terpu8" path="res://rooms/entrance.tscn" id="2_vbsbw"]
+[ext_resource type="PackedScene" uid="uid://bi3n4crl2bkup" path="res://rooms/foyer.tscn" id="3_drb04"]
+
+[node name="LevelTutorial" unique_id=1033206001 instance=ExtResource("1_onn8r")]
+
+[node name="Entrance" parent="Rooms" parent_id_path=PackedInt32Array(785193189) index="0" unique_id=1787977811 instance=ExtResource("2_vbsbw")]
+
+[node name="Foyer" parent="Rooms" parent_id_path=PackedInt32Array(785193189) index="1" unique_id=391997954 instance=ExtResource("3_drb04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -8)
+
+[node name="PlayerSpawn" parent="." index="1" unique_id=2095863355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
