@@ -1,5 +1,23 @@
 [gd_scene format=3 uid="uid://dlm7qgt43ny25"]
 
+[ext_resource type="Script" uid="uid://dv5ofcqnf8wsp" path="res://rooms/room.gd" id="1_ya37f"]
+[ext_resource type="MeshLibrary" uid="uid://cryoe2xkmpiq" path="res://assets/mesh_libs/walls_tiles.meshlib" id="2_sdog0"]
+[ext_resource type="MeshLibrary" uid="uid://d2tb1tj8c7e47" path="res://assets/mesh_libs/ceiling_tiles.meshlib" id="3_ji6aa"]
+
 [node name="Room" type="Node3D" unique_id=1611491344]
+script = ExtResource("1_ya37f")
 
 [node name="Floors" type="GridMap" parent="." unique_id=1869344666]
+unique_name_in_owner = true
+mesh_library = ExtResource("2_sdog0")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+
+[node name="Ceilings" type="GridMap" parent="." unique_id=1617874438]
+unique_name_in_owner = true
+mesh_library = ExtResource("3_ji6aa")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(64883, 64908, 1048576)
+}

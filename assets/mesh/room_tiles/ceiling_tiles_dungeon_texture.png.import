@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mboh51x1to5g"
-path.s3tc="res://.godot/imported/walls_tiles_dungeon_texture.png-59a23009f998f0ac1bc946ab6982e009.s3tc.ctex"
+uid="uid://u0wns01kwoh"
+path.s3tc="res://.godot/imported/ceiling_tiles_dungeon_texture.png-d1ebdaf067090b06b43bed09346c1901.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/mesh/walls/walls_tiles_dungeon_texture.png"
-dest_files=["res://.godot/imported/walls_tiles_dungeon_texture.png-59a23009f998f0ac1bc946ab6982e009.s3tc.ctex"]
+source_file="res://assets/mesh/room_tiles/ceiling_tiles_dungeon_texture.png"
+dest_files=["res://.godot/imported/ceiling_tiles_dungeon_texture.png-d1ebdaf067090b06b43bed09346c1901.s3tc.ctex"]
 
 [params]
 
