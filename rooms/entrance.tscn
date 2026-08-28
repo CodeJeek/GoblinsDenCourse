@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://driml88terpu8"]
 
-[ext_resource type="PackedScene" uid="uid://b620b217cqgsw" path="res://rooms/room.tscn" id="1_rb8ey"]
-[ext_resource type="MeshLibrary" uid="uid://cryoe2xkmpiq" path="res://assets/mesh_libs/walls_tiles.meshlib" id="2_ciskr"]
+[ext_resource type="PackedScene" uid="uid://dlm7qgt43ny25" path="res://rooms/room.tscn" id="1_ciskr"]
+[ext_resource type="MeshLibrary" uid="uid://cryoe2xkmpiq" path="res://assets/mesh_libs/walls_tiles.meshlib" id="2_uqeot"]
 
-[node name="Entrance" unique_id=1787977811 instance=ExtResource("1_rb8ey")]
+[node name="Entrance" unique_id=1611491344 instance=ExtResource("1_ciskr")]
 
-[node name="Floors" type="GridMap" parent="." index="0" unique_id=371625416]
-mesh_library = ExtResource("2_ciskr")
+[node name="Floors" parent="." index="0" unique_id=1869344666]
+mesh_library = ExtResource("2_uqeot")
+cell_size = Vector3(1, 1, 1)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65535, 65535, 0, 65535, 0, 0, 65534, 0, 0, 65534, 65535, 0, 65533, 65535, 0, 65533, 0, 0, 65532, 65535, 6, 65532, 0, 6, 65532, 1, 4, 65533, 1, 1048582, 65534, 1, 1048582, 65535, 1, 1048582, 65532, 65534, 1441796, 65533, 65534, 1441798, 65534, 65534, 1441798, 65535, 65534, 1441798, 0, 65534, 1441798, 0, 1, 1048582, 0, 65535, 1048576, 0, 0, 1048576, 1, 1, 1048580, 1, 65534, 655364, 1, 0, 1048581, 1, 65535, 655365)
+"cells": PackedInt32Array(65535, 65534, 0, 65535, 65535, 0, 65535, 0, 0, 65535, 1, 0, 0, 1, 0, 0, 0, 0, 0, 65535, 0, 0, 65534, 0, 65534, 2, 5, 1, 2, 1048581, 1, 65533, 655365, 65534, 65533, 1441797, 1, 1, 655367, 1, 0, 655367, 1, 65535, 655367, 1, 65534, 655367, 65534, 1, 7, 65534, 0, 7, 65534, 65535, 7, 65534, 65534, 7, 65535, 2, 1048583, 0, 2, 1048583, 65535, 65533, 1441798, 0, 65533, 655366)
 }

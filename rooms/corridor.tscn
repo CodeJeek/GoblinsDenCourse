@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c60jgjipuc6gf"]
+
+[ext_resource type="PackedScene" uid="uid://dlm7qgt43ny25" path="res://rooms/room.tscn" id="1_ump8f"]
+[ext_resource type="MeshLibrary" uid="uid://cryoe2xkmpiq" path="res://assets/mesh_libs/walls_tiles.meshlib" id="2_pivyr"]
+
+[node name="Corridor" unique_id=1611491344 instance=ExtResource("1_ump8f")]
+
+[node name="Floors" parent="." index="0" unique_id=1869344666]
+mesh_library = ExtResource("2_pivyr")
+cell_size = Vector3(1, 1, 1)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(0, 65535, 655367, 65535, 65535, 7)
+}
