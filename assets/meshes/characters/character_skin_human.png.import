@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u0wns01kwoh"
-path.s3tc="res://.godot/imported/ceiling_tiles_dungeon_texture.png-d1ebdaf067090b06b43bed09346c1901.s3tc.ctex"
+uid="uid://dei4kmops14yu"
+path.s3tc="res://.godot/imported/character_skin_human.png-b4e440f46f614e3943d96318a586170e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2512a7e03c21722d8ed6ab1e0421ecbf"
+"md5": "d9ebfaa257d48976971cfdd56577a781"
 }
 
 [deps]
 
-source_file="res://assets/mesh/room_tiles/ceiling_tiles_dungeon_texture.png"
-dest_files=["res://.godot/imported/ceiling_tiles_dungeon_texture.png-d1ebdaf067090b06b43bed09346c1901.s3tc.ctex"]
+source_file="res://assets/meshes/characters/character_skin_human.png"
+dest_files=["res://.godot/imported/character_skin_human.png-b4e440f46f614e3943d96318a586170e.s3tc.ctex"]
 
 [params]
 

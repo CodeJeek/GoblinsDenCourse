@@ -4,7 +4,7 @@
 
 A practice project following a Godot tutorial — learning 3D first-person game development by building a small dungeon crawler. Right now it's a single playable tutorial level: an FPS controller, a few modular dungeon rooms, auto-generated ceilings, and dungeon tiles modeled in Blender.
 
-> Just a learning project — mostly following along with a course, not a finished game.
+> Just a learning project — mostly a project with following along, not a finished game.
 
 ## What's in it
 

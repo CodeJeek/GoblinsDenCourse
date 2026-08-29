@@ -2,7 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 
-const MAX_ANGLE_LOOK_UP := deg_to_rad(90)
+const MAX_ANGLE_LOOK_UP := deg_to_rad(80)
 const MAX_ANGLE_LOOK_DOWN := deg_to_rad(-70)
 
 
