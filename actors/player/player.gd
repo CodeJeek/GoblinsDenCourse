@@ -7,6 +7,10 @@ const MAX_ANGLE_LOOK_DOWN := deg_to_rad(-70)
 
 
 @onready var camera: Camera3D = $Camera3D
+@onready var states: Node = $States
+@onready var animation_tree: AnimationTree = $AnimationTree
+
+@onready var state: PlayerState : set = set_state
 
 @export var gravity: float
 @export var acceleration: float
@@ -19,6 +23,10 @@ var input_dir := Vector2.ZERO
 
 
 func _ready() -> void:
+	for state in states.get_children():
+		state.context = self
+	set_state(find_child("Idle"))
+
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
@@ -56,6 +64,15 @@ func _unhandled_input(event: InputEvent) -> void:
 func jump() -> void:
 	if is_on_floor():
 		velocity.y = jump_strength
+
+
+func set_state(new_state: PlayerState) -> void:
+	if state:
+		state.exit()
+		new_state.previous_state = state
+	
+	state = new_state
+	state.enter()
 
 
 func change_mouse_mode() -> void:

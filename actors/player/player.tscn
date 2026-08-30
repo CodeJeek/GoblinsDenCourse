@@ -2,26 +2,102 @@
 
 [ext_resource type="Script" uid="uid://cfe65cnthlhry" path="res://actors/player/player.gd" id="1_nvxhs"]
 [ext_resource type="PackedScene" uid="uid://bv7sdbcwlnirt" path="res://assets/meshes/characters/character.glb" id="2_ilk7j"]
+[ext_resource type="Script" uid="uid://drn8pqlh5rsrx" path="res://actors/animation_tree.gd" id="3_ax26v"]
+[ext_resource type="Script" uid="uid://hmvovkd7m16n" path="res://actors/player/states/idle.gd" id="4_lsqbn"]
+[ext_resource type="Script" uid="uid://crnkmts88pj1l" path="res://actors/player/states/walk.gd" id="5_6p1w3"]
+[ext_resource type="Script" uid="uid://cvq225o1bgtiy" path="res://actors/player/camera.gd" id="6_15y17"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lms7o"]
 radius = 0.305
 height = 1.7
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ilk7j"]
+animation = &"sword_and_shield_idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ax26v"]
+animation = &"sword_and_shield_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lsqbn"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6p1w3"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_15y17"]
+xfade_time = 0.2
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lms7o"]
+states/Start/position = Vector2(162, 100)
+states/sword_and_shield_idle/node = SubResource("AnimationNodeAnimation_ilk7j")
+states/sword_and_shield_idle/position = Vector2(373, 100)
+states/sword_and_shield_walk/node = SubResource("AnimationNodeAnimation_ax26v")
+states/sword_and_shield_walk/position = Vector2(679, 100)
+transitions = ["Start", "sword_and_shield_idle", SubResource("AnimationNodeStateMachineTransition_lsqbn"), "sword_and_shield_idle", "sword_and_shield_walk", SubResource("AnimationNodeStateMachineTransition_6p1w3"), "sword_and_shield_walk", "sword_and_shield_idle", SubResource("AnimationNodeStateMachineTransition_15y17")]
+
 [node name="Player" type="CharacterBody3D" unique_id=980582778]
 script = ExtResource("1_nvxhs")
 gravity = 0.9
 acceleration = 30.0
-walk_speed = 3.0
+walk_speed = 1.8
 run_speed = 5.0
 jump_strength = 10.0
 mouse_sensitivity = 0.003
 
-[node name="character" parent="." unique_id=167464984 instance=ExtResource("2_ilk7j")]
+[node name="Character" parent="." unique_id=1956780355 instance=ExtResource("2_ilk7j")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Character/Armature" parent_id_path=PackedInt32Array(1956780355, 1087460076) index="0" unique_id=1053105535]
+bones/0/position = Vector3(0.014210081, -0.016385589, -0.5762225)
+bones/0/rotation = Quaternion(-0.57308966, -0.30036587, 0.34488702, 0.6800012)
+bones/1/rotation = Quaternion(0.31227106, 0.52772903, 0.7418005, -0.27151605)
+bones/2/rotation = Quaternion(-0.45854115, 0.17361803, -0.028739173, 0.8710746)
+bones/3/rotation = Quaternion(0.6875983, 0.1506708, -0.36032018, 0.6121082)
+bones/4/rotation = Quaternion(-0.21677944, 0.27702507, 0.8684943, 0.3492587)
+bones/5/rotation = Quaternion(-0.4252798, -0.048251487, -0.01502447, 0.9036499)
+bones/6/rotation = Quaternion(0.791389, -0.044102374, 0.43144405, 0.43083006)
+bones/7/rotation = Quaternion(0.03459785, 0.032174993, -0.0295111, 0.9984473)
+bones/8/rotation = Quaternion(0.03868534, 0.011580944, 0.020609654, 0.9989718)
+bones/9/rotation = Quaternion(0.011485989, 0.01118096, 0.009152772, 0.9998297)
+bones/10/rotation = Quaternion(-0.626598, -0.2980328, 0.55672574, -0.45673606)
+bones/11/rotation = Quaternion(0.32524645, -0.06297763, -0.055023376, 0.94192415)
+bones/12/rotation = Quaternion(0.23619871, -0.09860521, 0.84268445, 0.47367728)
+bones/13/rotation = Quaternion(0.080644734, 0.97881246, -0.03395953, -0.18512)
+bones/14/rotation = Quaternion(-0.03951588, 0.086639464, -0.019605441, 0.9952626)
+bones/15/rotation = Quaternion(-0.057245705, 0.20693639, -0.043139685, 0.97572505)
+bones/17/rotation = Quaternion(0.45899758, -0.3666882, 0.7175406, 0.37416115)
+bones/18/rotation = Quaternion(0.40258363, 0.10874742, 0.15743543, 0.8951617)
+bones/19/rotation = Quaternion(0.02854367, -0.04052861, -0.77535284, 0.62957984)
+bones/20/rotation = Quaternion(0.12422106, 0.98371637, 0.055439867, -0.11746416)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=695461477]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_lms7o")
 
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1317394757]
+root_node = NodePath("../Character")
+tree_root = SubResource("AnimationNodeStateMachine_lms7o")
+advance_expression_base_node = NodePath("..")
+anim_player = NodePath("../Character/AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/walk = false
+script = ExtResource("3_ax26v")
+
+[node name="States" type="Node" parent="." unique_id=1090849714]
+
+[node name="Idle" type="Node" parent="States" unique_id=2063457793]
+script = ExtResource("4_lsqbn")
+metadata/_custom_type_script = "uid://dpftdwpsranqe"
+
+[node name="Walk" type="Node" parent="States" unique_id=1546332855]
+script = ExtResource("5_6p1w3")
+metadata/_custom_type_script = "uid://dpftdwpsranqe"
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=831593065]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4896997, -0.2518309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4896997, 2.344484)
+script = ExtResource("6_15y17")
+
+[editable path="Character"]
